@@ -10,42 +10,57 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
+import com.geekbrains.cloud.jan.model.CloudMessage;
+import com.geekbrains.cloud.jan.model.FileMessage;
+import com.geekbrains.cloud.jan.model.FileRequest;
+import com.geekbrains.cloud.jan.model.ListMessage;
+import io.netty.handler.codec.serialization.ObjectDecoderInputStream;
+import io.netty.handler.codec.serialization.ObjectEncoderOutputStream;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class Client implements Initializable {
 
-    private static final int SIZE = 256;
     public ListView<String> clientView;
     public ListView<String> serverView;
     private Path clientDir;
-    private DataInputStream is;
-    private DataOutputStream os;
-    private byte[] buf;
+    private ObjectDecoderInputStream is;
+    private ObjectEncoderOutputStream os;
 
     // read from network
     private void readLoop() {
         try {
             while (true) {
-                String command = is.readUTF();
-                System.out.println("received: " + command);// wait message
-                if (command.equals("#list#")) {
-                    Platform.runLater(() -> serverView.getItems().clear());
-                    int filesCount = is.readInt();
-                    for (int i = 0; i < filesCount; i++) {
-                        String fileName = is.readUTF();
-                        Platform.runLater(() -> serverView.getItems().add(fileName));
-                    }
-                } else if (command.equals("#file#")) {
-                    Sender.getFile(is, clientDir, SIZE, buf);
-                    Platform.runLater(this::updateClientView);
+                CloudMessage message = (CloudMessage) is.readObject();
+                log.info("received: {}", message);
+                switch (message.getType()) {
+                    case FILE:
+                        processFileMessage((FileMessage) message);
+                        break;
+                    case LIST:
+                        processListMessage((ListMessage) message);
+                        break;
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void processListMessage(ListMessage message) {
+        Platform.runLater(() -> {
+            serverView.getItems().clear();
+            serverView.getItems().addAll(message.getFiles());
+        });
+    }
+
+    private void processFileMessage(FileMessage message) throws IOException {
+        Files.write(clientDir.resolve(message.getFileName()), message.getBytes());
+        Platform.runLater(this::updateClientView);
     }
 
     private void updateClientView() {
@@ -62,13 +77,13 @@ public class Client implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            buf = new byte[SIZE];
             clientDir = Paths.get(System.getProperty("user.home"));
             updateClientView();
+            initMouseListeners();
             Socket socket = new Socket("localhost", 8189);
             System.out.println("Network created...");
-            is = new DataInputStream(socket.getInputStream());
-            os = new DataOutputStream(socket.getOutputStream());
+            os = new ObjectEncoderOutputStream(socket.getOutputStream());
+            is = new ObjectDecoderInputStream(socket.getInputStream());
             Thread readThread = new Thread(this::readLoop);
             readThread.setDaemon(true);
             readThread.start();
@@ -77,16 +92,38 @@ public class Client implements Initializable {
         }
     }
 
+    private void initMouseListeners() {
+
+        clientView.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                Path current = clientDir.resolve(getItem());
+                if (Files.isDirectory(current)) {
+                    clientDir = current;
+                    Platform.runLater(this::updateClientView);
+                }
+            }
+        });
+
+        serverView.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                // todo Home Work
+            }
+        });
+
+    }
+
+    private String getItem() {
+        return clientView.getSelectionModel().getSelectedItem();
+    }
+
     public void upload(ActionEvent actionEvent) throws IOException {
         String fileName = clientView.getSelectionModel().getSelectedItem();
-        Sender.sendFile(fileName, os, clientDir);
+        os.writeObject(new FileMessage(clientDir.resolve(fileName)));
     }
 
 
     public void download(ActionEvent actionEvent) throws IOException {
         String fileName = serverView.getSelectionModel().getSelectedItem();
-        os.writeUTF("#get_file#");
-        os.writeUTF(fileName);
-        os.flush();
+        os.writeObject(new FileRequest(fileName));
     }
 }
