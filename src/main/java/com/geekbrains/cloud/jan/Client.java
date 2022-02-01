@@ -1,7 +1,5 @@
 package com.geekbrains.cloud.jan;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
@@ -30,6 +28,7 @@ public class Client implements Initializable {
     private Path clientDir;
     private ObjectDecoderInputStream is;
     private ObjectEncoderOutputStream os;
+    private CloudMessageProcessor processor;
 
     // read from network
     private void readLoop() {
@@ -37,30 +36,11 @@ public class Client implements Initializable {
             while (true) {
                 CloudMessage message = (CloudMessage) is.readObject();
                 log.info("received: {}", message);
-                switch (message.getType()) {
-                    case FILE:
-                        processFileMessage((FileMessage) message);
-                        break;
-                    case LIST:
-                        processListMessage((ListMessage) message);
-                        break;
-                }
+                processor.processMessage(message);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private void processListMessage(ListMessage message) {
-        Platform.runLater(() -> {
-            serverView.getItems().clear();
-            serverView.getItems().addAll(message.getFiles());
-        });
-    }
-
-    private void processFileMessage(FileMessage message) throws IOException {
-        Files.write(clientDir.resolve(message.getFileName()), message.getBytes());
-        Platform.runLater(this::updateClientView);
     }
 
     private void updateClientView() {
@@ -80,6 +60,7 @@ public class Client implements Initializable {
             clientDir = Paths.get(System.getProperty("user.home"));
             updateClientView();
             initMouseListeners();
+            processor = new CloudMessageProcessor(clientDir, clientView, serverView);
             Socket socket = new Socket("localhost", 8189);
             System.out.println("Network created...");
             os = new ObjectEncoderOutputStream(socket.getOutputStream());

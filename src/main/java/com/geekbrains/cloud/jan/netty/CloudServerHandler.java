@@ -24,7 +24,8 @@ public class CloudServerHandler extends SimpleChannelInboundHandler<CloudMessage
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, CloudMessage cloudMessage) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx,
+                                CloudMessage cloudMessage) throws Exception {
         switch (cloudMessage.getType()) {
             case FILE_REQUEST:
                 processFileRequest((FileRequest) cloudMessage, ctx);
