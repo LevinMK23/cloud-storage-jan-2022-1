@@ -5,19 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50a6a6ae-b9d6-43e9-a585-28c1b6943fed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/CloudMessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/FileMessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/MessageProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/ProcessorRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/builder/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/func/Func.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/func/MessageCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/test/StreamApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/test/StreamInterfaces.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/CloudServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/CloudServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/CloudMessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/CloudMessageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/FileMessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/FileMessageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/MessageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/MessageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/ProcessorRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/ProcessorRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/model/CloudMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/geekbrains/cloud/jan/model/CloudMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/model/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/geekbrains/cloud/jan/model/CommandType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/model/FileMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/geekbrains/cloud/jan/model/FileMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/model/FileRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/geekbrains/cloud/jan/model/FileRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/model/ListMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/geekbrains/cloud/jan/model/ListMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/BaseNettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/netty/BaseNettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/CloudServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/netty/CloudServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/CloudServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/netty/CloudServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/NettyEchoServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/netty/NettyEchoServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/netty/StringHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/netty/StringHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/nio/Buffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/nio/Buffers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/nio/NioExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/nio/NioExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/nio/NioServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/nio/NioServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/nio/Watcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/nio/Watcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/serial/TestSerialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/serial/TestSerialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/serial/TransferObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/serial/TransferObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/builder/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/stream/builder/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/func/Func.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/stream/func/Func.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/func/MessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/stream/func/MessageCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/test/StreamApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/stream/test/StreamApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/test/StreamInterfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/stream/test/StreamInterfaces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/geekbrains/cloud/jan/stream/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan/stream/test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/geekbrains/cloud/jan/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/com/geekbrains/cloud/jan/layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/log4j.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +85,17 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/geekbrains/cloud/jan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.25243506" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -71,7 +103,11 @@
       <recent name="com.geekbrains.cloud.jan" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/com/geekbrains/cloud/jan" />
+      <recent name="$PROJECT_DIR$/client/src/main/resources" />
+      <recent name="$PROJECT_DIR$/server/src/main/java/com/geekbrains/cloud/jan" />
+      <recent name="$PROJECT_DIR$/client/src/main/resources/com/geekbrains/cloud/jan" />
+      <recent name="$PROJECT_DIR$/client/src/main/java/com/geekbrains/cloud/jan" />
+      <recent name="$PROJECT_DIR$/core/src/main/java/com/geekbrains/cloud/jan" />
     </key>
   </component>
   <component name="RunManager" selected="Application.StreamApi">
@@ -140,13 +176,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,7 +213,8 @@
       <workItem from="1642790297407" duration="2859000" />
       <workItem from="1643130605411" duration="7377000" />
       <workItem from="1643389766900" duration="7685000" />
-      <workItem from="1643735710393" duration="4839000" />
+      <workItem from="1643735710393" duration="5053000" />
+      <workItem from="1644340154735" duration="3250000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 2. Nio &#10;(watcher, path, read/write, channel, ByteBuffer)">
       <created>1643137394166</created>
@@ -191,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643396078577</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lesson 4. StreamApi">
+      <created>1643740589175</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1643740589175</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +246,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lesson 2. Nio &#10;(watcher, path, read/write, channel, ByteBuffer)" />
     <MESSAGE value="Lesson 3. Netty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 3. Netty" />
+    <MESSAGE value="Lesson 4. StreamApi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 4. StreamApi" />
   </component>
 </project>

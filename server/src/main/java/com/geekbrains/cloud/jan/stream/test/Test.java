@@ -5,7 +5,6 @@ import java.nio.file.Paths;
 
 import com.geekbrains.cloud.jan.model.CloudMessage;
 import com.geekbrains.cloud.jan.model.ListMessage;
-import com.geekbrains.cloud.jan.stream.builder.User;
 import com.geekbrains.cloud.jan.stream.func.Func;
 import com.geekbrains.cloud.jan.stream.func.MessageCallback;
 
@@ -36,10 +35,6 @@ public class Test {
         processMessage(new ListMessage(Paths.get("data")), Test::read);
         processMessage(new ListMessage(Paths.get("data")), System.out::println);
 
-        User user = User.builder()
-                .setAge(12)
-                .setName("Ivan")
-                .build();
 
     }
 

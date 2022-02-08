@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 import com.geekbrains.cloud.jan.model.CloudMessage;
 import com.geekbrains.cloud.jan.model.FileMessage;
 import com.geekbrains.cloud.jan.model.FileRequest;
-import com.geekbrains.cloud.jan.model.ListMessage;
 import io.netty.handler.codec.serialization.ObjectDecoderInputStream;
 import io.netty.handler.codec.serialization.ObjectEncoderOutputStream;
 import javafx.application.Platform;
